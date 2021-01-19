@@ -8,7 +8,14 @@ export const Login = () => {
 
   const handleSumbit = async (event) => {
     event.preventDefault()
-    const getUser = await postData(url, user)
+    try {
+      const getUser = await postData(url, user)
+
+        // you can send any message here to the user why it successful or not
+    }
+    catch (error) {
+      throw error
+    }
   }
 
   const handlechange = (event) => {
@@ -18,7 +25,6 @@ export const Login = () => {
       [event.target.name]: value
     });
   }
-  console.log(user, '########')
   return (
     <div>
       <h1>Please Login</h1>
